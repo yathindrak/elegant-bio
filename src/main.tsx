@@ -7,16 +7,12 @@ import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import { infuraProvider } from "wagmi/providers/infura";
-import {
-  ConnectKitProvider,
-  ConnectKitButton,
-  getDefaultClient,
-} from "connectkit";
+import { ConnectKitProvider } from "connectkit";
 import App from "./App";
 import "./index.css";
 
 const { chains, provider, webSocketProvider } = configureChains(
-  import.meta.env.VITE_USER_NODE_ENV === "production" ? [mainnet] : [goerli],
+  [mainnet, goerli],
   [infuraProvider({ apiKey: import.meta.env.VITE_USER_INFURA_API_KEY })]
 );
 
@@ -34,7 +30,7 @@ const client = createClient({
     new InjectedConnector({
       chains,
       options: {
-        name: "Injected",
+        name: "Browser Wallet",
         shimDisconnect: true,
       },
     }),

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ensdomains/content-hash": "^2.5.7",
     "connectkit": "^1.1.1",
     "ethers": "^5.7.2",
     "localforage": "^1.10.0",
@@ -17,6 +18,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
     "sort-by": "^1.2.0",
+    "swr": "^2.0.0",
     "wagmi": "^0.10.8"
   },
   "devDependencies": {
